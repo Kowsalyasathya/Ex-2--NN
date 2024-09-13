@@ -1,7 +1,8 @@
-<H3>Name</H3>
-<H3>Register no.</H3>
+<H3>Name: KOWSALYA M</H3>
+<H3>Register no: 212222230069</H3>
 <H3>Date</H3>
 <H3>Experiment No. 2 </H3>
+
 ## Implementation of Perceptron for Binary Classification
 # AIM:
 To implement a perceptron for classification using Python<BR>
@@ -82,12 +83,14 @@ class Perceptron:
   def predict(self, x: np.array):
     return np.where(self.f(x) >= 0, 1, -1)
 
+
 url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 df = pd.read_csv(url, header=None)
 print(df.head())
 
 y = df.iloc[:, 4].values
 x = df.iloc[:, 0:3].values
+
 
 fig = plt.figure()
 ax = plt.axes(projection='3d')
@@ -115,6 +118,7 @@ plt.xlabel("Sepal length")
 plt.ylabel("Petal length")
 plt.legend(loc='upper left')
 plt.show()
+
 
 y = np.where(y == 'Iris-setosa', 1, -1)
 x[:, 0] = (x[:, 0] - x[:, 0].mean()) / x[:, 0].std()
